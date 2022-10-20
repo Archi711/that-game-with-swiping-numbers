@@ -1,6 +1,7 @@
 import { render } from 'preact'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Home } from './features/home'
+import { RecoilRoot } from 'recoil'
 import './index.css'
 
 const router = createBrowserRouter([
@@ -11,5 +12,7 @@ const router = createBrowserRouter([
 ])
 
 render(
-  <RouterProvider router={router} />
+  <RecoilRoot>
+    <RouterProvider router={router} />
+  </RecoilRoot>
   , document.getElementById('app') as HTMLElement)
