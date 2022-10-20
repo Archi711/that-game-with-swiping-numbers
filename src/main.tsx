@@ -1,5 +1,15 @@
 import { render } from 'preact'
-import { App } from './features/app'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Home } from './features/home'
 import './index.css'
 
-render(<App />, document.getElementById('app') as HTMLElement)
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />
+  }
+])
+
+render(
+  <RouterProvider router={router} />
+  , document.getElementById('app') as HTMLElement)
